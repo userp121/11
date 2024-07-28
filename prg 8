@@ -1,0 +1,24 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+@WebServlet("/GreetingServlet")
+public class GreetingServlet extends HttpServlet {
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
+
+response.setContentType("text/html");
+
+String username = request.getParameter("username");
+
+PrintWriter out = response.getWriter();
+
+out.println("<html><head><title>Greeting Servlet</title></head><body>");
+out.println("<h1>Hello " + username + "</h1>");
+out.println("<p>How are you?</p>");
+out.println("</body></html>");
+
+
+out.close();
+}
+}
