@@ -3,33 +3,54 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 @WebServlet("/StudentDetailsServlet")
-public class StudentDetailsServlet extends HttpServlet {
-protected void doPost(HttpServletRequest request, HttpServletResponse response)
-throws ServletException, IOException {
-
-response.setContentType("text/html");
-
-String name = request.getParameter("name");
-String usn = request.getParameter("usn");
-String totalMarksStr = request.getParameter("totalMarks");
-
-int totalMarks = 0;
-try {
-totalMarks = Integer.parseInt(totalMarksStr);
-} catch (NumberFormatException e) {
-e.printStackTrace();
-
+	public class Program9 extends HttpServlet {
+	 protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+	 // Set response content type
+	 response.setContentType("text/html");
+	 // Get student details from the request
+	 String name = request.getParameter("name");
+ 	String usn = request.getParameter("usn");
+ 	String totalMarksStr = request.getParameter("totalMarks");
+	 // Convert total marks to integer
+	 int totalMarks = 0;
+	 try {
+	 totalMarks = Integer.parseInt(totalMarksStr);
+ 	} catch (NumberFormatException e) {
+	 e.printStackTrace();
+ 
+ }
+ // Create PrintWriter object
+ PrintWriter out = response.getWriter();
+ // Generate HTML response
+ out.println("<html><head><title>Student Details</title></head><body>");
+ out.println("<h1>Student Details</h1>");
+ out.println("<p>Name: " + name + "</p>");
+ out.println("<p>USN: " + usn + "</p>");
+ out.println("<p>Total Marks: " + totalMarks + "</p>");
+ out.println("</body></html>");
+ // Close PrintWriter
+ out.close();
+ }
 }
 
-PrintWriter out = response.getWriter();
 
-out.println("<html><head><title>Student Details</title></head><body>");
-out.println("<h1>Student Details</h1>");
-out.println("<p>Name: " + name + "</p>");
-out.println("<p>USN: " + usn + "</p>");
-out.println("<p>Total Marks: " + totalMarks + "</p>");
-out.println("</body></html>");
 
-out.close();
-}
-}
+http://localhost:8080/<Projectname>/pgm9.html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details Form</title>
+</head>
+<body>
+
+<form action="http://localhost:8080/tomcat9test/StudentDetailsServlet" method="post">
+    Enter Student Name: <input type="text" name="name"><br>
+    Enter Student USN: <input type="text" name="usn"><br>
+    Enter Total Marks: <input type="text" name="totalMarks"><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
