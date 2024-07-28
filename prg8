@@ -1,0 +1,47 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("Program8")
+public class Program8 extends HttpServlet {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+		// Set response content type
+		response.setContentType("text/html");
+ 
+		//Get username parameter from the request
+		String username = request.getParameter("username");
+
+		//Create PrintWriter object
+		PrintWriter out = response.getWriter();
+
+		//Generate HTML response
+		out.println("<html><head><title>Greeting Servlet</title></head><body>");
+		out.println("<h1>Hello " + username + "</h1>");
+		out.println("<p>How are you?</p>");
+		out.println("</body></html>");
+
+		//Close PrintWriter
+		out.close();
+	}
+}
+
+
+HTML File
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details Form</title>
+</head>
+<body>
+
+<form action="http://localhost:8080/tomcat9test/Program8" method="post">
+    Enter Student Name: <input type="text" name="username"><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
