@@ -1,0 +1,35 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+@WebServlet("/StudentDetailsServlet")
+public class StudentDetailsServlet extends HttpServlet {
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
+
+response.setContentType("text/html");
+
+String name = request.getParameter("name");
+String usn = request.getParameter("usn");
+String totalMarksStr = request.getParameter("totalMarks");
+
+int totalMarks = 0;
+try {
+totalMarks = Integer.parseInt(totalMarksStr);
+} catch (NumberFormatException e) {
+e.printStackTrace();
+
+}
+
+PrintWriter out = response.getWriter();
+
+out.println("<html><head><title>Student Details</title></head><body>");
+out.println("<h1>Student Details</h1>");
+out.println("<p>Name: " + name + "</p>");
+out.println("<p>USN: " + usn + "</p>");
+out.println("<p>Total Marks: " + totalMarks + "</p>");
+out.println("</body></html>");
+
+out.close();
+}
+}
