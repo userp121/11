@@ -1,39 +1,39 @@
 import javax.swing.*;
 import java.awt.event.*;
 public class ButtonDemo {
-public static void main(String[] args) {
-SwingUtilities.invokeLater(new Runnable() {
-public void run() {
-createAndShowGUI();
-}
-});
-}
-private static void createAndShowGUI() {
+  public static void main(String[] args) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        createAndShowGUI();
+      }
+    });
+  }
+  private static void createAndShowGUI() {
 
-JFrame frame = new JFrame("Button Demo");
-frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    JFrame frame = new JFrame("Button Demo");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-JButton alphaButton = new JButton("Alpha");
-JButton betaButton = new JButton("Beta");
+    JButton alphaButton = new JButton("Alpha");
+    JButton betaButton = new JButton("Beta");
 
-alphaButton.addActionListener(new ActionListener() {
-public void actionPerformed(ActionEvent e) {
-JOptionPane.showMessageDialog(frame, "Alpha pressed");
-}
-});
+    alphaButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(frame, "Alpha pressed");
+      }
+    });
 
-betaButton.addActionListener(new ActionListener() {
-public void actionPerformed(ActionEvent e) {
-JOptionPane.showMessageDialog(frame, "Beta pressed");
-}
-});
+    betaButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(frame, "Beta pressed");
+      }
+    });
 
-JPanel contentPane = new JPanel();
-contentPane.add(alphaButton);
-contentPane.add(betaButton);
-frame.setContentPane(contentPane);
+  JPanel contentPane = new JPanel();
+  contentPane.add(alphaButton);
+  contentPane.add(betaButton);
+  frame.setContentPane(contentPane);
 
-frame.pack();
-frame.setVisible(true);
-}
+  frame.pack();
+  frame.setVisible(true);
+  }
 }
