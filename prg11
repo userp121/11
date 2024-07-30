@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+ 
+\geometry{a4paper, margin=1in}
+ 
+\title{A Simple LaTeX Report with Algorithms}
+\author{JBN}
+\date{\today}
+ 
+\begin{document}
+\section*{Algorithm Example}
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\KwIn{Array $A$ of $n$ elements}
+\KwOut{Maximum element in $A$}
+\SetKwFunction{FindMax}{FindMax}
+\SetKwProg{Fn}{Function}{:}{}
+\Fn{\FindMax{$A, n$}}{
+$max \leftarrow A[0]$\;
+\For{$i \leftarrow 1$ \KwTo $n-1$}{
+\If{$A[i] > max$}{
+$max \leftarrow A[i]$\;
+}
+}
+\KwRet $max$\;
+}
+\end{algorithm}
+\end{document}
