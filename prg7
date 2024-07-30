@@ -1,39 +1,31 @@
-import javax.swing.*;
-import java.awt.event.*;
-public class ButtonDemo {
-  public static void main(String[] args) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        createAndShowGUI();
-      }
-    });
-  }
-  private static void createAndShowGUI() {
+\documentclass{article}
+\usepackage{amsmath}
 
-    JFrame frame = new JFrame("Button Demo");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    JButton alphaButton = new JButton("Alpha");
-    JButton betaButton = new JButton("Beta");
-
-    alphaButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(frame, "Alpha pressed");
-      }
-    });
-
-    betaButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(frame, "Beta pressed");
-      }
-    });
-
-  JPanel contentPane = new JPanel();
-  contentPane.add(alphaButton);
-  contentPane.add(betaButton);
-  frame.setContentPane(contentPane);
-
-  frame.pack();
-  frame.setVisible(true);
-  }
-}
+\begin{document}
+	
+	\begin{equation}
+		x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+		
+	\end{equation}
+	
+	\begin{equation}
+		= \frac{-2 \pm \sqrt{2^2 - 4 \cdot 1 \cdot (-8)}}{2 \cdot 1}
+ 	  \end{equation}
+	
+	\begin{equation}
+		= \frac{-2 \pm \sqrt{4 + 32}}{2}
+	\end{equation}
+	
+	\begin{equation}
+		\varphi^\lambda_\sigma A_t = \sum_{\pi \in C_t} \text{sgn}(\pi) \varphi^\lambda_\sigma \varphi^\lambda_\pi
+	\end{equation}
+	
+	\begin{equation}
+		= \sum_{\tau \in C_t} \text{sgn}(\sigma^{-1} \tau) \varphi^\lambda_\sigma \varphi^\lambda_{\sigma^{-1} \tau \sigma}
+	\end{equation}
+	
+	\begin{equation}
+		= A_{\sigma t} \varphi^\lambda_\sigma
+	\end{equation}
+	
+\end{document}
