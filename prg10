@@ -1,31 +1,35 @@
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.net.CookieStore;
-import java.net.HttpCookie;
-public class CookieExample {
- public static void main(String[] args) {
+\documentclass{article} 
+\usepackage{tikz} 
+\begin{document} 
 
-  CookieManager cookieManager = new CookieManager();
-  CookieHandler.setDefault(cookieManager);
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3cm] 
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=2cm] 
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm] 
 
-  HttpCookie cookie = new HttpCookie("EMPID", "AN2356");
 
-  CookieStore cookieStore = cookieManager.getCookieStore();
-
-  cookieStore.add(null, cookie);
-
-  String empId = null;
-
-  for (HttpCookie storedCookie : cookieStore.getCookies()) { 
-   if (storedCookie.getName().equals("EMPID")) { 
-    empId = storedCookie.getValue(); 
-    break; 
-    } 
-  }
-  if (empId != null) { 
-   System.out.println("Value of EMPID cookie: " + empId); 
-  } else { 
-   System.out.println("EMPID cookie not found"); 
-   } 
- }
-}
+\begin{tikzpicture}[ 
+level 1/.style={level distance=1.5cm, sibling distance=4cm}, 
+level 2/.style={level distance=1.5cm, sibling distance=2cm}, 
+level 3/.style={level distance=1.5cm, sibling distance=1.5cm} 
+] 
+\node {Root} 
+child 
+{ 
+node {Child 1} 
+child { node {Grandchild 1} } 
+child { node {Grandchild 2} } 
+} 
+child 
+{ 
+node {Child 2} 
+child { node {Grandchild 3} } 
+child { node {Grandchild 4} } 
+} 
+child 
+{ 
+node {Child 3} 
+child { node {Grandchild 5} } 
+child { node {Grandchild 6} } 
+}; 
+\end{tikzpicture} 
+\end{document}
