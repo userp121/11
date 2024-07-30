@@ -1,0 +1,15 @@
+\documentclass{article} 
+\title{Sample Report} 
+\author{Author Name} 
+\date{\today} 
+\begin{document} 
+\maketitle 
+\section{Introduction} 
+This is the introduction section of the report. 
+\section{Methodology} 
+Here we explain the methodology used. 
+\section{Results} 
+The results of our study are presented here. 
+\section{Conclusion} 
+In conclusion, we summarize our findings. 
+\end{document}
